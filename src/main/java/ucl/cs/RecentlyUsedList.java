@@ -10,11 +10,14 @@ public class RecentlyUsedList {
     }
 
     public void add(String file){
-        contents.add(file);
+        if(!contents.contains(file)){
+            contents.add(0,file);
+        }
     }
 
-    public void get(){
-
+    public String get(String file){
+        String ret = contents.get(contents.indexOf(file));
+        return ret;
     }
 
 
